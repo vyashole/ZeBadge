@@ -2,7 +2,7 @@
 
 package de.berlindroid.zeapp.zeui
 
-import android.R
+
 import android.app.Activity
 import android.widget.Toast
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -26,6 +26,8 @@ import de.berlindroid.zeapp.zemodels.ZeConfiguration
 import de.berlindroid.zeapp.zeui.zepages.WeatherPage
 
 
+private const val Empty = ""
+
 /**
  * Editor dialog for selecting the weather
  *
@@ -34,9 +36,6 @@ import de.berlindroid.zeapp.zeui.zepages.WeatherPage
  * @param dismissed callback called when dialog is dismissed / cancelled
  * @param accepted callback called with the new configuration configured.
  */
-
-private const val Empty = ""
-
 @Composable
 fun WeatherEditorDialog(
     activity: Activity,
@@ -53,7 +52,7 @@ fun WeatherEditorDialog(
             activity = activity,
             content = {
                 WeatherPage(date, temperature)
-                      },
+            },
         ) {
             image = it
         }
@@ -74,7 +73,7 @@ fun WeatherEditorDialog(
                         ).show()
                     }
                 }) {
-                Text(text = stringResource(id = R.string.ok))
+                Text(text = stringResource(id = android.R.string.ok))
             }
         },
         dismissButton = {

@@ -38,7 +38,7 @@ fun PictureEditorDialog(
     dismissed: () -> Unit = {},
     accepted: (config: ZeConfiguration.Picture) -> Unit
 ) {
-    var context = LocalContext.current
+    val context = LocalContext.current
 
     var bitmap by remember {
         mutableStateOf(

@@ -2,8 +2,6 @@
 
 package de.berlindroid.zeapp.zeui
 
-import android.R
-import android.app.Activity
 import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -27,9 +25,12 @@ import androidx.compose.ui.window.DialogProperties
 import de.berlindroid.zeapp.LocalActivity
 import de.berlindroid.zeapp.zebits.composableToBitmap
 import de.berlindroid.zeapp.zebits.isBinary
-import de.berlindroid.zeapp.zeui.zepages.NamePage
 import de.berlindroid.zeapp.zemodels.ZeConfiguration
+import de.berlindroid.zeapp.zeui.zepages.NamePage
 
+
+const val MaxCharacters: Int = 20
+private const val Empty = ""
 
 /**
  * Editor dialog for changing the name of the participant badge.
@@ -38,10 +39,6 @@ import de.berlindroid.zeapp.zemodels.ZeConfiguration
  * @param dismissed callback called when dialog is dismissed / cancelled
  * @param accepted callback called with the new configuration configured.
  */
-
-const val MaxCharacters: Int = 20
-private const val Empty = ""
-
 @Composable
 fun NameEditorDialog(
     config: ZeConfiguration.Name,
@@ -77,7 +74,7 @@ fun NameEditorDialog(
                         ).show()
                     }
                 }) {
-                Text(text = stringResource(id = R.string.ok))
+                Text(text = stringResource(id = android.R.string.ok))
             }
         },
         dismissButton = {

@@ -1,7 +1,6 @@
 package de.berlindroid.zeapp.zemodels
 
 import android.graphics.Bitmap
-import de.berlindroid.zeapp.zevm.ZeBadgeViewModel
 
 /**
  * The configuration of a slot

@@ -65,7 +65,7 @@ private fun Array<Int>.differenceToBlock(
     width: Int,
     height: Int,
 ): Int {
-    var error = 0;
+    var error = 0
 
     for (y in 0 until PATTERN_SIZE) {
         for (x in 0 until PATTERN_SIZE) {
@@ -168,7 +168,7 @@ fun MutableList<Array<Int>>.deriveMorePatterns(): List<Array<Int>> {
 }
 
 fun bruteForce() = (0 until PATTERN_BITS_NEEDED).map { patternAsInt ->
-    var pattern = IntArray(PATTERN_PLACE_COUNT)
+    val pattern = IntArray(PATTERN_PLACE_COUNT)
 
     for (bit in 0 until PATTERN_PLACE_COUNT) {
         if (patternAsInt and (1 shl bit) == (1 shl bit)) {

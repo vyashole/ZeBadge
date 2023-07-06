@@ -2,7 +2,6 @@
 
 package de.berlindroid.zeapp.zeui
 
-import android.app.Activity
 import android.widget.Toast
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn

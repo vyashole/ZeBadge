@@ -12,7 +12,6 @@ import de.berlindroid.zeapp.zebits.toBinary
 import de.berlindroid.zeapp.zebits.toBitmap
 import de.berlindroid.zeapp.zemodels.ZeConfiguration
 import de.berlindroid.zeapp.zemodels.ZeSlot
-import de.berlindroid.zeapp.zevm.ZeBadgeViewModel
 import javax.inject.Inject
 
 class ZePreferencesService @Inject constructor(

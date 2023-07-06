@@ -77,12 +77,18 @@ fun ZeImageDrawEditorDialog(
             )
             setContent {
                 LaunchedEffect(key1 = currentPosition, block = {
-                    if (motionEvent == MotionEvent.Down) {
-                        path.moveTo(currentPosition.x, currentPosition.y)
-                    } else if (motionEvent == MotionEvent.Move) {
-                        path.lineTo(currentPosition.x, currentPosition.y)
-                    } else if (motionEvent == MotionEvent.Up) {
-                        path.lineTo(currentPosition.x, currentPosition.y)
+                    when (motionEvent) {
+                        MotionEvent.Down -> {
+                            path.moveTo(currentPosition.x, currentPosition.y)
+                        }
+                        MotionEvent.Move -> {
+                            path.lineTo(currentPosition.x, currentPosition.y)
+                        }
+                        MotionEvent.Up -> {
+                            path.lineTo(currentPosition.x, currentPosition.y)
+                        }
+
+                        MotionEvent.Idle -> Unit
                     }
                 })
                 Canvas(

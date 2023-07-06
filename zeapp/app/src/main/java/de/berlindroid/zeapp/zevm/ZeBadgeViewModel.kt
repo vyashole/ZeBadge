@@ -233,23 +233,31 @@ class ZeBadgeViewModel @Inject constructor(
             )
         } else {
             // no selection needed, check for name slot and ignore non configurable slots
-            if (slot is ZeSlot.Name) {
-                currentSlotEditor.value = ZeEditor(
-                    slot,
-                    slots.value[ZeSlot.Name]!!
-                )
-            } else if (slot is ZeSlot.QRCode) {
-                currentSlotEditor.value = ZeEditor(
-                    slot,
-                    slots.value[ZeSlot.QRCode]!!
-                )
-            } else if (slot is ZeSlot.Weather) {
-                currentSlotEditor.value = ZeEditor(
-                    slot,
-                    slots.value[ZeSlot.Weather]!!
-                )
-            } else {
-                Log.d("Customize Page", "Cannot configure slot '${slot.name}'.")
+            when (slot) {
+                is ZeSlot.Name -> {
+                    currentSlotEditor.value = ZeEditor(
+                        slot,
+                        slots.value[ZeSlot.Name]!!
+                    )
+                }
+
+                is ZeSlot.QRCode -> {
+                    currentSlotEditor.value = ZeEditor(
+                        slot,
+                        slots.value[ZeSlot.QRCode]!!
+                    )
+                }
+
+                is ZeSlot.Weather -> {
+                    currentSlotEditor.value = ZeEditor(
+                        slot,
+                        slots.value[ZeSlot.Weather]!!
+                    )
+                }
+
+                else -> {
+                    Log.d("Customize Page", "Cannot configure slot '${slot.name}'.")
+                }
             }
         }
     }
